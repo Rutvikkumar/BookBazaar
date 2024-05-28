@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "story book",
+        "title": "hello i am book",
+        "price": 10,
+        "category": "Free",
+        "image": "https://img.freepik.com/free-photo/stack-various-books-table_1252-645.jpg?t=st=1716735903~exp=1716739503~hmac=7eeae07807e8d9eec8193b052b3b8e7f499691117593c40a3f4973dc97ef238c&w=996"
+    },
+    {
+        "id": 1,
+        "name": "story book",
+        "title": "hello i am book",
+        "price": 10,
+        "category": "Free",
+        "image": "https://img.freepik.com/free-photo/stack-various-books-table_1252-645.jpg?t=st=1716735903~exp=1716739503~hmac=7eeae07807e8d9eec8193b052b3b8e7f499691117593c40a3f4973dc97ef238c&w=996"
+    },
+    {
+        "id": 1,
+        "name": "story book",
+        "title": "hello i am book",
+        "price": 10,
+        "category": "Free",
+        "image": "https://img.freepik.com/free-photo/stack-various-books-table_1252-645.jpg?t=st=1716735903~exp=1716739503~hmac=7eeae07807e8d9eec8193b052b3b8e7f499691117593c40a3f4973dc97ef238c&w=996"
+    },
+    {
+        "id": 1,
+        "name": "story book",
+        "title": "hello i am book",
+        "price": 10,
+        "category": "Free",
+        "image": "https://img.freepik.com/free-photo/stack-various-books-table_1252-645.jpg?t=st=1716735903~exp=1716739503~hmac=7eeae07807e8d9eec8193b052b3b8e7f499691117593c40a3f4973dc97ef238c&w=996"
+    }
+]
