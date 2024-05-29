@@ -1,0 +1,27 @@
+{
+  "name": "bookbazaar",
+  "version": "1.0.0",
+  "description": "this is website where you buy book",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rutvikkumar/BookBazaar.git"
+  },
+  "author": "Rutvik Parmar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rutvikkumar/BookBazaar/issues"
+  },
+  "homepage": "https://github.com/Rutvikkumar/BookBazaar#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.1"
+  }
+}
