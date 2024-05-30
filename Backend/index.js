@@ -1,13 +1,19 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
+
+
 import bookRoute from "./routes/book_rout.js";
+import userRoute from "./routes/user_rout.js";
 dotenv.config();
 
 const port = process.env.PORT || 3000;
 const uri = process.env.MONGODBURL;
 const app = express();
 
+
+app.use(cors());
 try {
   await mongoose.connect(uri, {
       useNewUrlParser: true,
@@ -21,6 +27,7 @@ try {
 }
 app.use(express.json());
 app.use("/book",bookRoute);
+app.use("/user",userRoute);
 
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
