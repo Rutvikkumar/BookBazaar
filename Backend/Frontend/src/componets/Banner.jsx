@@ -12,10 +12,11 @@ function Banner() {
               <span className="text-blue-500">new everyday!!!</span>
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Consequuntur dolorem optio alias nam in, eligendi error voluptas
-              veniam saepe nihil esse! Quibusdam molestiae, illo eos minima
-              natus beatae eveniet maxime!
+              Welcome to Book Haven! Dive into a world of imagination,
+              knowledge, and adventure with our extensive collection of books.
+              Explore and discover your next great read. Join our community of
+              book lovers today, enjoy exclusive member benefits, and let the
+              magic of reading enrich your life.
             </p>
             <label className="input input-bordered flex items-center gap-2">
               Email

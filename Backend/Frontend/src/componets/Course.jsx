@@ -9,7 +9,7 @@ function Course() {
   useEffect(() => {
     const getbook = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/book");
+        const res = await axios.get("/book");
         console.log(res.data);
         setBook(res.data);
       } catch (error) {
@@ -25,10 +25,11 @@ function Course() {
         <div className="mt-28 items-center-justify-center text-center">
           <h1 className="text-2xl ">We're delighted to have you Here!:)</h1>
           <p className="mt-12 md:">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-            adipisci eum quaerat ut nulla nostrum cupiditate natus iusto, fugiat
-            mollitia officia optio ea ratione aspernatur nam molestias neque
-            itaque laborum!
+            Welcome to Book Haven! Dive into a world of imagination, knowledge,
+            and adventure with our extensive collection of books. Explore and
+            discover your next great read. Join our community of book lovers
+            today, enjoy exclusive member benefits, and let the magic of reading
+            enrich your life.
           </p>
 
           <Link to="/">
