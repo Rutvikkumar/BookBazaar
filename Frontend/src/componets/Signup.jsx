@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import axios from "axios";
 import Login from "./Login";
 
 function Signup() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -17,21 +21,20 @@ function Signup() {
       email: data.email,
       password: data.password,
     };
-
     await axios
       .post("http://localhost:5000/user/signup", userinfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
           toast.success("Signup Successfully!");
+          navigate(from, { replace: true });
         }
 
         localStorage.setItem("Users", JSON.stringify(res.data));
       })
       .catch((error) => {
         if (error.response) {
-          console.log(error);
-          toast.error(error.response.data.message);
+          toast.error(error);
         }
       });
   };
@@ -59,7 +62,14 @@ function Signup() {
                   type="text"
                   placeholder="Enter Your Name"
                   className="w-80 px-30 border rounded-md outline-none"
+                  {...register("fullname", { required: true })}
                 />
+                <br />
+                {errors.fullname && (
+                  <span className="text-sm text-red-500">
+                    This field is required
+                  </span>
+                )}
               </div>
               <div>
                 {/* Login */}
@@ -72,6 +82,7 @@ function Signup() {
                   className="w-80 px-30 border rounded-md outline-none"
                   {...register("email", { required: true })}
                 />
+                <br />
                 {errors.email && (
                   <span className="text-sm text-red-500">
                     This field is required
@@ -89,6 +100,7 @@ function Signup() {
                   className="w-80 px-30 border rounded-md outline-none"
                   {...register("password", { required: true })}
                 />
+                <br />
                 {errors.password && (
                   <span className="text-sm text-red-500">
                     This field is required
