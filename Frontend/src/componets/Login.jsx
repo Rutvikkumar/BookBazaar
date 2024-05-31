@@ -23,7 +23,10 @@ function Login() {
         console.log(res.data);
         if (res.data) {
           toast.success('Login Successfully');
+          document.getElementById("my_modal_3").close();
+          window.location.reload();
         }
+
         
         localStorage.setItem("Users",JSON.stringify(res.data));
       })
@@ -45,6 +48,7 @@ function Login() {
               <Link
                 to="/"
                 className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                onClick={()=>document.getElementById("my_modal_3").close()}
               >
                 ✕
               </Link>
