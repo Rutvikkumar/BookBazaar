@@ -1,5 +1,6 @@
 import User from "../model/user_model.js";
 import  bcryptjs from "bcryptjs";
+import bcrypt from "bcrypt";
 
 export const signup = async (req, res) => {
   try {
@@ -10,7 +11,7 @@ export const signup = async (req, res) => {
     if (user) {
       return res.status(400).json({ message: "User already exist" });
     }
-    const hashpassword = await bcryptjs.hash(password, parseInt(5,10));
+    const hashpassword = await bcrypt.hash(password, 10);
 
     const createdUser = new User({
       fullname: fullname,
@@ -35,7 +36,7 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-    const isMatch = await bcryptjs.compare(password, user.password);
+    const isMatch = await bcrypt.compare(password, user.password);
 
     if (!user || !isMatch) {
       return res.status(400).json({ message: "Invalid username or password" });
