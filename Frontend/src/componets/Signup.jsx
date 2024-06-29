@@ -22,7 +22,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post("/user/signup", userinfo)
+      .post("https://bookbazaar-e1qc.onrender.com/user/signup", userinfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
