@@ -30,13 +30,13 @@ app.use("/user", userRoute);
 
 //deployment code
 
-if(process.env.NODE_ENV ==="production"){
-  const dirPath = path.resolve();
-  app.use(express.static("Frontend/dist"));
-  app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(dirPath,"Frontend","dist","index.html"));
-  })
-}
+// if(process.env.NODE_ENV ==="production"){
+//   const dirPath = path.resolve();
+//   app.use(express.static("Frontend/dist"));
+//   app.get("*",(req,res)=>{
+//     res.sendFile(path.resolve(dirPath,"Frontend","dist","index.html"));
+//   })
+// }
 
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);
