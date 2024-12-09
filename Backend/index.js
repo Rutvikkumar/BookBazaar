@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
+import apiRoutes from "./routes/apiRoutes.js"
 
 import bookRoute from "./routes/book_rout.js";
 import userRoute from "./routes/user_rout.js";
@@ -27,6 +28,7 @@ try {
 app.use(express.json());
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
+app.use("/api",apiRoutes);
 
 //deployment code
 

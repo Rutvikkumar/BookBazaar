@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Login from "./Login";
 import { useAuth } from "../context/Authprovider";
 import Logout from "./Logout";
+import { Link } from "react-router-dom";
+import logo from "../../public/logo.png";
 
 function navbar() {
   const [authUser, setAuthUser] = useAuth();
@@ -91,7 +93,14 @@ function navbar() {
                 {navItem}
               </ul>
             </div>
-            <a className="text-2*1 font-bold cursor-pointer">BookBazaar</a>
+
+            <div className="flex items-center">
+              {" "}
+              <img src={logo} alt="Logo" className="w-10 h-10" />
+              <a className="text-2*1 font-bold cursor-pointer mt-5">
+                BookBazaar
+              </a>
+            </div>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">
@@ -153,13 +162,12 @@ function navbar() {
               <div>
                 <a
                   className="bg-black px-3 py-2 text-white p-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
+                  href="/login"
                 >
                   Login
                 </a>
-                <Login />
+
+                <Link to="/login"></Link>
               </div>
             )}
           </div>
