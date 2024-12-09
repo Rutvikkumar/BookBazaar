@@ -43,22 +43,19 @@ function Signup() {
         {/* Cover Photo Section */}
         <div
           className="hidden md:block w-1/2 bg-cover bg-center"
-          style={
-            {
-              backgroundImage: `url("https://www.freepik.com/free-photo/navy-blue-concrete-wall-with-scratches_15556823.htm#fromView=keyword&page=1&position=26&uuid=11359ba2-11ba-4a10-9c77-12d6af14a49e")`,
-            }
-          }
+          style={{
+            backgroundImage: `url("https://www.freepik.com/free-photo/navy-blue-concrete-wall-with-scratches_15556823.htm#fromView=keyword&page=1&position=26&uuid=11359ba2-11ba-4a10-9c77-12d6af14a49e")`,
+          }}
         >
           <div className="h-full  bg-opacity-70 flex items-center justify-center">
             <div className="text-center text-white px-8">
-                <h2 className="text-3xl font-bold mb-4">Join Us!</h2>
-                <p className="text-xl">
-                  Create an account to explore exclusive features.
-                </p>
-                <img src={signup} alt="" />
-                </div>
-              </div>
-           
+              <h2 className="text-3xl font-bold mb-4">Join Us!</h2>
+              <p className="text-xl">
+                Create an account to explore exclusive features.
+              </p>
+              <img src={signup} alt="" />
+            </div>
+          </div>
         </div>
 
         {/* Signup Form */}
@@ -161,7 +158,7 @@ function Signup() {
             {/* Login Link */}
             <p className="text-sm text-center mt-4">
               Already have an account?{" "}
-              <Link to="/login" className="text-blue-500 underline">
+              <Link to="/login" className="bg-green-400">
                 Login here
               </Link>
             </p>

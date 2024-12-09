@@ -113,13 +113,13 @@ function Login() {
 
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              className="w-full py-2 px-4 bg-green-400 text-white rounded-md hover:bg-blue-700"
             >
               Login
             </button>
             <p className="text-sm text-center mt-4">
               If you have no account?{" "}
-              <Link to="/signup" className="text-blue-500 underline">
+              <Link to="/signup" className=" bg-green-400 underline">
                 Signup here
               </Link>
             </p>
