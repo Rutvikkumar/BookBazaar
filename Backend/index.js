@@ -2,9 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
-import path from "path";
-import apiRoutes from "./routes/apiRoutes.js"
 
+import bookRoutes from "./routes/bookRoutes.js";
 import bookRoute from "./routes/book_rout.js";
 import userRoute from "./routes/user_rout.js";
 dotenv.config();
@@ -28,17 +27,8 @@ try {
 app.use(express.json());
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
-app.use("/api",apiRoutes);
+app.use('/api/books', bookRoutes);
 
-//deployment code
-
-// if(process.env.NODE_ENV ==="production"){
-//   const dirPath = path.resolve();
-//   app.use(express.static("Frontend/dist"));
-//   app.get("*",(req,res)=>{
-//     res.sendFile(path.resolve(dirPath,"Frontend","dist","index.html"));
-//   })
-// }
 
 app.listen(port, () => {
   console.log(`Server is listening at http://localhost:${port}`);

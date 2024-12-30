@@ -1,26 +1,32 @@
 import React from "react";
 
-const Card = ({ item }) => {
+function Cards({item}) {
+    console.log(item);
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 flex items-center space-x-4 w-80">
-    <img
-      src={item.image}
-      alt="All the Light We Cannot See"
-      className="w-32 h-48 rounded-md"
-    />
-    <div>
-      <span className="text-sm font-bold text-orange-500">{item.category}</span>
-      <h2 className="text-lg font-bold mt-2">
-        item.titale
-      </h2>
-      <p className="text-gray-500">by Anthony Doerr</p>
-      <p className="text-xl font-bold mt-2">₹{item.price}</p>
-      <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-        BUY NOW
-      </button>
-    </div>
-  </div>
+    <>
+      <div className="mt-4 my-3 p-3" >
+        <div className="card w-92 bg-base-100 shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border:">
+          <figure>
+            <img
+              src={item.image}
+              alt="Shoes"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+              {item.name}
+              <div className="badge badge-secondary">{item.category}</div>
+            </h2>
+            <p>{item.title}</p>
+            <div className="card-actions justify-between">
+              <div className="badge badge-outline">{item.price}</div>
+              <div className="bcursor-pointer px-2 py-1 rounded-full border-[2px]  hover:bg-pink-500 duration-300 px-2 py-1">Buy Now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
-};
+}
 
-export default Card;
+export default Cards;

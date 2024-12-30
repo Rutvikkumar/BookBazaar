@@ -8,8 +8,7 @@ function Course() {
   useEffect(() => {
     const getbook = async () => {
       try {
-        // const res = await axios.get("https://bookbazaar-e1qc.onrender.com/book");
-        const res = await axios.get("https://www.googleapis.com/books/v1/volumes?q=book&orderBy=newest&m");
+        const res = await axios.get("https://bookbazaar-e1qc.onrender.com/book");
         console.log(res.data);
         setBook(res.data);
       } catch (error) {

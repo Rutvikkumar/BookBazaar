@@ -1,83 +1,44 @@
 import React, { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import axios from "axios";
-import Cards from "./Cards";
-function Freebook() {
+import Cards from "./Card";
 
+function Freebook() {
   const [book, setBook] = useState([]);
+
   useEffect(() => {
     const getbook = async () => {
       try {
-        const res = await axios.get("https://bookbazaar-e1qc.onrender.com/book");
-        console.log(res.data);
-        const data = res.data.filter((data) => data.category == "Free")
-        setBook(data);
+        const res = await axios.get(
+          "http://localhost:5000/api/books/search?query=book&orderBy=newest"
+        );
+        const data = res.data.items || [];
+
+        // Limit to 9 books
+        const limitedBooks = data.slice(0, 9);
+        setBook(limitedBooks);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching books:", error);
       }
     };
-
     getbook();
   }, []);
 
-  var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   return (
-    <>
-      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
-        <div>
-        <h1 className="font-bold text-xl pb-2">Free Courses</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio aut
-          soluta nisi? Nam aliquam eos dolor soluta tempora aliquid laboriosam
-          sint! Iusto nisi ipsa nobis tenetur. Aliquid mollitia vero iure.
+    <div className="bg-gray-50 py-10">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-black">New Arrivals</h1>
+        <p className="text-black">
+          Reading books helps you develop your communication skills
         </p>
-        </div>
-      
-      <div className="slider-container">
-        <Slider {...settings}>
-          {book.map((item)=>(
-            <Cards item={item} key={item.id}/>
-          ))}
-      
-        </Slider>
       </div>
+
+      {/* Grid Layout */}
+      <div className="ml-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16 justify-center">
+        {book.map((item) => (
+          <Cards item={item} key={item.id} />
+        ))}
       </div>
-    </>
+    </div>
   );
 }
 
