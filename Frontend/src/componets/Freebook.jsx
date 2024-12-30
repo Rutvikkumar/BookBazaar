@@ -9,7 +9,7 @@ function Freebook() {
     const getbook = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/books/search?query=book&orderBy=newest"
+          "https://bookbazaar-e1qc.onrender.com/api/books/search?query=book&orderBy=newest"
         );
         const data = res.data.items || [];
 
